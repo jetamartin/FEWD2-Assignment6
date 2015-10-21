@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="constants.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+    	<div style="text-align:center;">
+			<h2>Build Order Confirmation</h2>
+			<p/>
+			Are you done building your pizza order?
+
+			<div id="buildOrder_CancelAndOK"
+				 style="margin-top:20px; width:100%; display:inline-block; text-align:center;">
+				<button id="buildOrder_cancelButton" type="submit" class="btn btn-default">Cancel</button>					
+				<button id="buildOrder_okButton" type="submit" class="btn btn-default">OK</button>					
+			</div>
+    	</div>
+    	
+        <script>
+        	//Add event triggers:
+			document.getElementById("buildOrder_cancelButton").addEventListener("click", buildOrder_confirmationCancel, false);
+			document.getElementById("buildOrder_okButton").addEventListener("click", buildOrder_confirmationOK, true);
+        
+            function buildOrder_confirmationCancel() {
+				var thisPopUpWindow = window.self;
+				thisPopUpWindow.close();
+            }
+            
+			function buildOrder_confirmationOK() {
+				buildOrder_completed();
+
+				var thisPopUpWindow = window.self;
+				thisPopUpWindow.close();
+			}
+        </script>
+    	
+    </body>
+</html>

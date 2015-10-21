@@ -1,0 +1,15 @@
+#hideOtherAddress, #billHideOtherAddress {
+    display: none; 
+}
+
+#showOtherAddress, #billShowOtherAddress {
+    display: block;
+}
+
+.displayNone {
+    display: none;
+}
+.displayImportant {
+    color: red;
+    font-weight: bold;
+}

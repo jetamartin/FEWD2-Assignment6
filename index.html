@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html data-brackets-id='255' lang="en">
+
+<head data-brackets-id='256'>
+    <meta data-brackets-id='257' charset="utf-8">
+    <meta data-brackets-id='258' http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta data-brackets-id='259' name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta data-brackets-id='260' name="description" content="">
+    <meta data-brackets-id='261' name="author" content="">
+    <link data-brackets-id='262' rel="icon" href="../../favicon.ico">
+
+    <title data-brackets-id='263'>Jet's Pizza Shop</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <script src="script.js"></script>
+    
+    <!-- JQUERY     -->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
+    <script src="js/jquery-2.1.4.js"></script>
+     <script src="js/bootstrap.min.js"> </script>
+    <!-- Bootstrap CDN    -->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+
+    <!-- Optional theme -->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">    -->
+
+
+    <!-- Latest compiled and minified JavaScript -->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+
+        <!-- Custom styles for this template -->
+    <link data-brackets-id='265' href="css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script>
+    <script data-brackets-id='266' type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script>
+    <script data-brackets-id='267' src="js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-brackets-id='268'>
+
+    <div data-brackets-id='269' class="container">
+        <div data-brackets-id='270' class="header clearfix">
+            <nav data-brackets-id='271'>
+                <ul data-brackets-id='272' class="nav nav-pills pull-right">
+                    <li data-brackets-id='273' role="presentation" class="active"><a data-brackets-id='274' href="#">Home</a></li>
+                    <li data-brackets-id='275' role="presentation"><a data-brackets-id='276' href="#">About</a></li>
+                    <li data-brackets-id='277' role="presentation"><a data-brackets-id='278' href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <h3 data-brackets-id='279' class="text-muted">Jet's Pizza</h3>
+        </div>
+
+        <div data-brackets-id='280' class="jumbotron">
+            <h1 data-brackets-id='281'>Jet's Pizza Order</h1>
+            <p data-brackets-id='282' class="lead">Order your delicious pizza here</p>
+            <p data-brackets-id='283'><a data-brackets-id='284' class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        </div>
+        <div class="displayNone" id="errorMessages"> </div>
+       <h1>Delivery Location: </h1>
+        <form role="form" id="deliveryInfo" >
+            <div class="form-group" >
+               <div id="nameField">
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" id="nameInput">
+                </div>
+                <br>
+                <label for="addressType">Address Type:</label> 
+                <select id="addressType">
+                    <option value="home">Home</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="business">Business</option>
+                    <option value="campus">Campus</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="dorm">Dorm</option>
+                    <option value="hotel">Hotel</option>
+                    <option disabled>──────────</option>
+                    <option value="other">Other</option>
+                </select>
+                <div id="hideOtherAddress">               
+                    <label for="otherAddress">Other Address:</label>
+                    <input class="form-control" type="address" id="otherAddressInput" >
+                </div> 
+                <div>
+                    <label for="address">Street Address:</label>
+                    <input type="address" class="form-control" id="addressInput">
+                </div>               
+                
+                <label for="room">Apartment# / Suite# / Room#:</label>
+                <input type="room" class="form-control" id="roomInput">
+                <label for="city">City:</label>
+                <input type="city" class="form-control" id="cityInput">
+                <label for="state">State:</label>
+                <input type="state" class="form-control" id="stateInput">
+                <label for="zip">Zip Code:</label>
+                <input type="zip" class="form-control" id="zipInput">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="emailInput">                 
+            </div>            
+            <button id="submitPersonalInfo" type="submit" class="btn btn-default">Ready To Build My Pie</button>
+            <br>
+        </form>
+        <div id="deliveryInfoSummary"></div>
+        
+        
+        
+        
+<!--        Build Pizza Order -->
+        <div id="buildOrder_main">
+			<h2>Build Your Order</h2>
+			<p/>
+			<b>Total Order: $<span id="buildOrder_totalCost">0</span></b>
+			<p/>
+			<form id="buildOrder_form">
+			    <!-- SELECT DOUGH -->
+				<div id="buildOrder_selectDough">
+					Select Dough
+					<br/>
+					<input type="radio" name="dough" 
+					       value="handTossed" >Hand Tossed<br/>
+					<input type="radio" name="dough" 
+					       value="thinCrust" >Thin Crust<br/>
+					<input type="radio" name="dough" 
+					       value="newYorkStyle" >New York Style<br/>
+					<input type="radio" name="dough" 
+					       value="glutenFree">Gluten Free<br/>
+				</div>
+			
+				<!-- SELECT SIZE AND COST -->
+				<div id="buildOrder_size"
+				     style="margin-top:20px; display:none; ">
+					Select Size
+					<br/>
+					<select id="buildOrder_sizeMenu"
+					        ></select>
+				</div>
+			
+				<div id="buildOrder_cheeseAndSauce"
+				     style="margin-top:20px; display:none;">
+					<!-- SELECT CHEESE -->
+					<div id="buildOrder_cheese"
+					     style="margin-right:20px; display:inline-block;">
+						Cheese Options
+						<br/>
+						<select id="buildOrder_cheeseMenu" >
+							<option value="0">Light: no charge</option>
+							<option value="0" selected>Normal: no charge</option>
+							<option value="2.99">Extra: +$2.99</option>
+							<option value="3.99">Double: +$3.99</option>
+						</select>
+					</div>
+
+					<!-- SELECT SAUCE -->
+					<div id="buildOrder_sauce"
+					     style="display:inline-block;">
+						Sauce Options
+						<br/>
+						<select id="buildOrder_sauceMenu">
+							<option value="0" selected>Regular Tomato: no charge</option>
+							<option value="0.99">Hearty Tomato: +$.99</option>
+							<option value="1.99">BBQ Sauce: +$1.99</option>
+						</select>
+					</div>
+				</div>
+			
+      			<!-- SELECT TOPPING -->
+				<div id="buildOrder_topping"
+				     style="margin-top:20px; display:none;">
+				     Topping Options<br/>
+				     <i>Each topping is $.99 extra</i><br/>
+				     <input id="buildOrder_topping_pepperoni" type="checkbox" name="topping" 
+				            value="0.99">Pepperoni<br>
+                     <input id="buildOrder_topping_sausage" type="checkbox" name="topping" 
+                            value="0.99" >Sausage<br/>        
+                     <input id="buildOrder_topping_ham" type="checkbox" name="topping" 
+                            value="0.99" >Ham<br/>        
+                     <input id="buildOrder_topping_bacon" type="checkbox" name="topping" 
+                            value="0.99" >Bacon<br/>        
+                     <input id="buildOrder_topping_salami" type="checkbox" name="topping" 
+                            value="0.99" >Salami<br/>        
+                     <input id="buildOrder_topping_peppers" type="checkbox" name="topping" 
+                            value="0.99" >Peppers<br/>        
+                     <input id="buildOrder_topping_olives" type="checkbox" name="topping" 
+                            value="0.99" >Olives<br/>        
+                     <input id="buildOrder_topping_jalapenos" type="checkbox" name="topping" 
+                            value="0.99" >Jalapenos<br/>        
+                     <input id="buildOrder_topping_mushrooms" type="checkbox" name="topping" 
+                            value="0.99" >Mushrooms<br/>        
+                     <input id="buildOrder_topping_pineapple" type="checkbox" name="topping" 
+                            value="0.99" >Pineapple<br/>        
+                     <input id="buildOrder_topping_onion" type="checkbox" name="topping" 
+                            value="0.99" >Onion<br/>        
+				</div>
+			</form>
+
+			<!-- SUBMIT BUTTON -->
+			<div id="buildOrder_complete"
+				 style="margin-top:20px; display:none;">
+				<button id="buildOrder_submitButton" type="submit" class="btn btn-default">Finished Building Pizza</button>					
+			</div>
+			
+            <!-- SUMMARY (READ_ONLY -->
+			<div id="buildOrder_summary"
+			     style="display:none;">
+			</div>
+        </div>
+        
+
+<!--    Billing information    -->
+       <div id="billingInfoHeader" >
+            <h1>Billing Information: </h1>
+            <div class="checkbox">
+              <label><input id="billingMatchDelivery" type="checkbox" value=""><span class="displayImportant">Billing Address Same As Delivery Address (if checked it autopopulates this form)</span></label>
+          </div>
+        </div>
+        <form role="form" id="userBillingInfo" >
+            <div class="form-group" >
+               <div id="billNameField">
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" id="billNameInput">
+                </div>
+                <br>
+                <label for="addressType">Address Type:</label> 
+                <select id="billAddressType">
+                    <option value="home">Home</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="business">Business</option>
+                    <option value="campus">Campus</option>
+                    <option value="hotel">Hotel</option>
+                    <option value="dorm">Dorm</option>
+                    <option value="hotel">Hotel</option>
+                    <option disabled>──────────</option>
+                    <option value="other">Other</option>
+                </select>
+                <div id="billHideOtherAddress">               
+                    <label for="otherAddress">Other Address:</label>
+                    <input class="form-control" type="address" id="billOtherAddressInput" >
+                </div> 
+                <div>
+                    <label for="address">Street Address:</label>
+                    <input type="address" class="form-control" id="billAddressInput">
+                </div>               
+                
+                <label for="room">Apartment# / Suite# / Room#:</label>
+                <input type="room" class="form-control" id="billRoomInput">
+                <label for="city">City:</label>
+                <input type="city" class="form-control" id="billCityInput">
+                <label for="state">State:</label>
+                <input type="state" class="form-control" id="billStateInput">
+                <label for="zip">Zip Code:</label>
+                <input type="zip" class="form-control" id="billZipInput">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="billEmailInput">                 
+            </div>            
+            <button id="billSubmitPersonalInfo" type="submit" class="btn btn-default">Make Payment</button>
+            <br>
+        </form>
+        <div id="billingSummary"></div>
+        
+
+
+        <footer data-brackets-id='300' class="footer">
+            <p data-brackets-id='301'>&copy; Company 2014</p>
+        </footer>
+
+    </div>
+    <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script data-brackets-id='302' src="js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
