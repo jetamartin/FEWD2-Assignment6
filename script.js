@@ -25,9 +25,9 @@ function init() {
     var addressType = document.getElementById("addressType");
     addressType.addEventListener("click", addRemoveOtherAddress, false);
     var billingForm = document.getElementById("userBillingInfo");
-    
+
     var validateBillButton = document.getElementById("billSubmitPersonalInfo");
-    
+
     // Div where error messages are displayed
     var errorMsgElement = document.getElementById("errorMessages");
 
@@ -38,22 +38,22 @@ function init() {
     var billingMatchDeliveryChkBox = document.getElementById("billingMatchDelivery");
     billingMatchDeliveryChkBox.addEventListener("click", populateDeliveryForm, false);
 
-       var billErrorMsgElement = document.getElementById("billingErrorMsgs");
+    var billErrorMsgElement = document.getElementById("billingErrorMsgs");
 
     billingForm.style.display = "none";
-//    var billingInfoHeader = document.getElementById("billingInfoHeader");
-//    billingInfoHeader.style.display = "none";
+    //    var billingInfoHeader = document.getElementById("billingInfoHeader");
+    //    billingInfoHeader.style.display = "none";
     var userPaymentForm = document.getElementById("userPaymentForm");
     // Hide the payment form    
     userPaymentForm.style.display = "none";
-    
-    
+
+
     document.getElementById("buildOrder_main").style.display = "none";
-    
+
     var buildOrderConfirmationButton = document.getElementById("buildOrder_submitButton");
-    
-    
-     buildOrderConfirmationButton.addEventListener("click", buildOrder_confirmation, false);
+
+
+    buildOrderConfirmationButton.addEventListener("click", buildOrder_confirmation, false);
 
 
 
@@ -143,10 +143,10 @@ function init() {
         if (errorMsgArray.length > 0) {
             createAndDisplayErrorMsgs(errorMsgArray);
         } else { // All Delivery successfully validated
-            
-           // Clear any error message before locking form
+
+            // Clear any error message before locking form
             errorMsgElement.style.display = "none";
-            
+
             // Create Object with validated field
             var deliveryInfoObject = {
                     name: nameInput.value,
@@ -160,24 +160,24 @@ function init() {
                 // Insert deliveryInfo into customerObject
             CustomerInfoObject["deliveryInfo"] = deliveryInfoObject;
             var deliveryForm = document.getElementById("deliveryInfo");
-            
+
             // Get delivery Form Fieldset and Disable it 
 
             var deliveryFormFieldset = document.getElementById("deliveryFormFieldset");
-//            document.activeElement.blur();
+            //            document.activeElement.blur();
             deliveryFormFieldset.disabled = true;
-            
-            
-//            // Hide deliverInfo Form
-//            deliveryForm.style.display = "none";
-            
+
+
+            //            // Hide deliverInfo Form
+            //            deliveryForm.style.display = "none";
+
             // Summary Data could be used instead of disabled form. 
-//            document.getElementById("deliveryInfoSummary").innerHTML =
-//                "Name: " + CustomerInfoObject.deliveryInfo.name + "<br/> Address: " +
-//                CustomerInfoObject.deliveryInfo.address + "<br/> City: " + CustomerInfoObject.deliveryInfo.city + "<br/> State: " +
-//                CustomerInfoObject.deliveryInfo.state + "<br/> ZipCode: " +
-//                CustomerInfoObject.deliveryInfo.zip + "<br/> email: " +
-//                CustomerInfoObject.deliveryInfo.email;
+            //            document.getElementById("deliveryInfoSummary").innerHTML =
+            //                "Name: " + CustomerInfoObject.deliveryInfo.name + "<br/> Address: " +
+            //                CustomerInfoObject.deliveryInfo.address + "<br/> City: " + CustomerInfoObject.deliveryInfo.city + "<br/> State: " +
+            //                CustomerInfoObject.deliveryInfo.state + "<br/> ZipCode: " +
+            //                CustomerInfoObject.deliveryInfo.zip + "<br/> email: " +
+            //                CustomerInfoObject.deliveryInfo.email;
 
             document.getElementById("buildOrder_main").style.display = "block";
         }
@@ -302,12 +302,12 @@ function init() {
 
     function populateDeliveryForm(event) {
         if (billingMatchDeliveryChkBox.checked) {
-//                       populateBillingWithDeliveryInfo ();
+            //                       populateBillingWithDeliveryInfo ();
             window.console.log("Checkbox is now checked");
 
             var billingSummary = document.getElementById("billingSummary");
             billingSummary.innerHTML =
-                "<br/><br/>" + 
+                "<br/><br/>" +
                 "BILLING SUMMARY INFORMATION: " + "<br/>" +
                 "Name: " + CustomerInfoObject.deliveryInfo.name + "<br/> Address: " +
                 CustomerInfoObject.deliveryInfo.address + "<br/> City: " + CustomerInfoObject.deliveryInfo.city + "<br/> State: " +
@@ -319,26 +319,26 @@ function init() {
 
         } else {
             window.console.log("Checkbox is now unchecked");
-                       
+
             // Not checked show them the billingForm
             billingForm.style.display = "block";
-//            var billingSummary = document.getElementById("billingSummary");
-//            billingSummary.style.display = "none";
+            //            var billingSummary = document.getElementById("billingSummary");
+            //            billingSummary.style.display = "none";
 
         }
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     // Take Data from Deliver info and populate 
     // Deliver form
     // Decided not to do this..will just leave form empty
     function populateBillingWithDeliveryInfo() {
-          
-        
+
+
     }
 
 
@@ -381,7 +381,7 @@ function init() {
             toppingCheckboxes[i].checked = false;
         }
 
-//        document.getElementById("buildOrder_complete").style.display = "none";
+        //        document.getElementById("buildOrder_complete").style.display = "none";
         document.getElementById("buildOrder_summary").style.display = "none";
 
         buildOrder_totalCost = 0;
@@ -452,7 +452,7 @@ function init() {
         //Display other options and their default options:
         document.getElementById("buildOrder_cheeseAndSauce").style.display = "block";
         document.getElementById("buildOrder_topping").style.display = "block";
-//        document.getElementById("buildOrder_complete").style.display = "block";
+        //        document.getElementById("buildOrder_complete").style.display = "block";
     }
 
     function buildOrder_selectCheese() {
@@ -517,50 +517,50 @@ function init() {
         event.preventDefault();
         var confirmed;
         if (confirm("BUILD CONFIRMATION ORDER \n\nAre you done building your pizza order?") == true) {
-//            buildOrder_completed();
- 
-            
+            //            buildOrder_completed();
+
+
             orderFormFieldset.disabled = true;
             billingForm.style.display = "block";
-            
+
             // Show user Billing form
 
-        } else {  // User canceled order
+        } else { // User canceled order
             // Re-enable UserDeliveryForm
             deliveryFormFieldset.disabled = false;
-            
+
             // Re-endable BuildOrderForm
-            orderFormFieldset.disabled = false;             
+            orderFormFieldset.disabled = false;
         }
-    
+
     }
 
-//    function buildOrder_completed() {
-        //Hide the buildOrder_form section:
-//        document.getElementById("buildOrder_form").style.display = "none";
-       // Disable order form 
-//       orderFormFieldset.disabled = true;
-        
-//        document.getElementById("buildOrder_complete").style.display = "none";
+    //    function buildOrder_completed() {
+    //Hide the buildOrder_form section:
+    //        document.getElementById("buildOrder_form").style.display = "none";
+    // Disable order form 
+    //       orderFormFieldset.disabled = true;
 
-        //Display buildOrder_summary section:
-//        var buildOrderSummary = document.getElementById("buildOrder_summary");
-//        buildOrderSummary.style.display = "block";
-//
-//        buildOrderSummary.innerHTML = ""
-//        "<b>Order Summary:</b><br/>" + "Dough: " + buildOrder.dough + "<br/>Size: " + buildOrder.size + "<br/>Cheese:: " + buildOrder.cheese + "<br/>Sauce:: " + buildOrder.sauce + "<br/>Toppings:: " + buildOrder.topping;
+    //        document.getElementById("buildOrder_complete").style.display = "none";
 
-        //Display "Billing Info" section:
-//        billingInfoHeader.style.display = "block";
-//    }
+    //Display buildOrder_summary section:
+    //        var buildOrderSummary = document.getElementById("buildOrder_summary");
+    //        buildOrderSummary.style.display = "block";
+    //
+    //        buildOrderSummary.innerHTML = ""
+    //        "<b>Order Summary:</b><br/>" + "Dough: " + buildOrder.dough + "<br/>Size: " + buildOrder.size + "<br/>Cheese:: " + buildOrder.cheese + "<br/>Sauce:: " + buildOrder.sauce + "<br/>Toppings:: " + buildOrder.topping;
 
-
+    //Display "Billing Info" section:
+    //        billingInfoHeader.style.display = "block";
+    //    }
 
 
-// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-// Validate Billing Info    
-// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-   
+
+
+    // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+    // Validate Billing Info    
+    // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
     validateBillButton.addEventListener("click", validateBillingInfo, false);
 
 
@@ -609,10 +609,10 @@ function init() {
         if (billErrorMsgArray.length > 0) {
             createAndDisplayBillErrorMsgs(billErrorMsgArray);
         } else { // All Delivery successfully validated
-            
-           // Clear any error message before locking form
+
+            // Clear any error message before locking form
             billErrorMsgElement.style.display = "none";
-            
+
             // Create Object with validated field
             var billingInfoObject = {
                     name: billNameInput.value,
@@ -626,28 +626,28 @@ function init() {
                 // Insert billingInfo into customerObject
             CustomerInfoObject["userBillingInfo"] = billingInfoObject;
             // ?????????????????????????
-//            var deliveryForm = document.getElementById("deliveryInfo");
-            
+            //            var deliveryForm = document.getElementById("deliveryInfo");
+
             // Get delivery Form Fieldset and Disable it 
 
             var deliveryFormFieldset = document.getElementById("billingFormFieldset");
-//            document.activeElement.blur();
+            //            document.activeElement.blur();
             billingFormFieldset.disabled = true;
-            
+
             // Now display User Payment Form
             userPaymentForm.style.display = "block";
-            
-//            // Hide deliverInfo Form
-//            deliveryForm.style.display = "none";
-            
+
+            //            // Hide deliverInfo Form
+            //            deliveryForm.style.display = "none";
+
             // Summary Data could be used instead of disabled form. 
-//            document.getElementById("deliveryInfoSummary").innerHTML =
-//                "Name: " + CustomerInfoObject.deliveryInfo.name + "<br/> Address: " +
-//                CustomerInfoObject.deliveryInfo.address + "<br/> City: " + CustomerInfoObject.deliveryInfo.city + "<br/> State: " +
-//                CustomerInfoObject.deliveryInfo.state + "<br/> ZipCode: " +
-//                CustomerInfoObject.deliveryInfo.zip + "<br/> email: " +
-//                CustomerInfoObject.deliveryInfo.email;
-            
+            //            document.getElementById("deliveryInfoSummary").innerHTML =
+            //                "Name: " + CustomerInfoObject.deliveryInfo.name + "<br/> Address: " +
+            //                CustomerInfoObject.deliveryInfo.address + "<br/> City: " + CustomerInfoObject.deliveryInfo.city + "<br/> State: " +
+            //                CustomerInfoObject.deliveryInfo.state + "<br/> ZipCode: " +
+            //                CustomerInfoObject.deliveryInfo.zip + "<br/> email: " +
+            //                CustomerInfoObject.deliveryInfo.email;
+
             //?????????????????????????            document.getElementById("buildOrder_main").style.display = "block";
         }
 
@@ -746,7 +746,7 @@ function init() {
     //Create error message string and displayed on screen above form
 
     function createAndDisplayBillErrorMsgs(billErrorMsgArray) {
- 
+
         if (billErrorMsgArray.length > 0) {
             var i;
             var billErrorMsgsStr = "";
@@ -762,203 +762,244 @@ function init() {
             billErrorMsgElement.style.display = "none";
 
         }
-    }    
-//*****************************************  
-//  Payment Validation Logic
-//***************************************** 
-    
+    }
+    //*****************************************  
+    //  Payment Validation Logic
+    //***************************************** 
+
     var validatePaymentButton = document.getElementById("authorizePayment");
     
+    // Call ValidatePaymentInfo    
     validatePaymentButton.addEventListener("click", validatePaymentInfo, false);
-    
-    
+
+
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     document.getElementById("ccTypeSelect").addEventListener("change", billing_ccTypeSelected, false);
     document.getElementById("authorizePayment").addEventListener("click", billing_authorizePayment, false);
     
+    
+
     // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
     function billing_ccTypeSelected(event) {
-    event.preventDefault();
-    
-    var selectCCTypeDropDownMenu = document.getElementById("ccTypeSelect");
-    var optionSelected = selectCCTypeDropDownMenu.options[selectCCTypeDropDownMenu.selectedIndex];
-    var optionSelectedValue = optionSelected.value;
-    console.log("billing_ccTypeSelected() - Selected: " + optionSelectedValue );
-    
-    document.getElementById("cvc").value = "";
-    
-    var ccNum = document.getElementById("ccNum");
-    ccNum.value = "";
-    if(optionSelectedValue == "visa") {
-        ccNum.setAttribute("maxlength", "16");
-    } else if(optionSelectedValue == "mc") {
-        ccNum.setAttribute("maxlength", "16");
-    } else if(optionSelectedValue == "amex") {
-        ccNum.setAttribute("maxlength", "15");
-    } else {
-        //Error:
-        var errorMsgArray = ["Selected Credit Type is invalid. Please select a valid one from the list! "];
-        showBillingErrorMessage(event, errorMsgArray);
-        return;
-    }
-}
+        event.preventDefault();
 
-function billing_authorizePayment(event) {
-    event.preventDefault();
-    
-    //Clear any previous error messages:
-    showOrHideBillingErrorMessage(null);    
-    var errorMsgArray = [];
-    
-    //Validate CC Type:
-    var ccTypeSelectedValue = null
-    var ccType = document.getElementById("ccNum")
-    var selectCCTypeDropDownMenu = document.getElementById("ccTypeSelect");
-    var ccTypeSelected = selectCCTypeDropDownMenu.options[selectCCTypeDropDownMenu.selectedIndex];
-    if(ccTypeSelected != null) {
-        ccTypeSelectedValue = ccTypeSelected.value;
+        var selectCCTypeDropDownMenu = document.getElementById("ccTypeSelect");
+        var optionSelected = selectCCTypeDropDownMenu.options[selectCCTypeDropDownMenu.selectedIndex];
+        var optionSelectedValue = optionSelected.value;
+        console.log("billing_ccTypeSelected() - Selected: " + optionSelectedValue);
+
+        document.getElementById("cvc").value = "";
+
+        var ccNum = document.getElementById("ccNum");
+        ccNum.value = "";
+        if (optionSelectedValue == "visa") {
+            ccNum.setAttribute("maxlength", "16");
+        } else if (optionSelectedValue == "mc") {
+            ccNum.setAttribute("maxlength", "16");
+        } else if (optionSelectedValue == "amex") {
+            ccNum.setAttribute("maxlength", "15");
+        } else {
+            //Error:
+            var errorMsgArray = ["Selected Credit Type is invalid. Please select a valid one from the list! "];
+            showBillingErrorMessage(event, errorMsgArray);
+            return;
+        }
     }
-    if(ccTypeSelectedValue == null || ccTypeSelectedValue.trim() == "") {
-        console.log("billing_authorizePayment() - Please select Credit Card Type before continue!");
-        errorMsgArray.push("Please select Credit Card Type before continue!");
-        showOrHideBillingErrorMessage(errorMsgArray);
-        return;
-    }
-    
-    //Validate CVC Code and CC Number:
-    var cvc = document.getElementById("cvc");
-    if(cvc.value == null || cvc.value.trim() == "") {
-        errorMsgArray.push("Please enter your Credit Card CVC code!");
-    }
-    var ccNum = document.getElementById("ccNum");
-    if(ccNum.value == null || ccNum.value.trim() == "") {
-        errorMsgArray.push("Please enter your Credit Card Number!");
-    } else if(/[^0-9-\s]+/.test(ccNum.value)) {
-        errorMsgArray.push("Your Credit Card Number must contain only numbers!");
-    }
-    if(errorMsgArray != null && errorMsgArray.length > 0) {
-        showOrHideBillingErrorMessage(errorMsgArray);
-        return;
-    }
-    
-    //Validate CC Type versus CC Number:
-    var ccNumValue = ccNum.value;
-    console.log("billing_authorizePayment() - ccNumValue: " + ccNumValue );
-    if(ccTypeSelectedValue == "visa") {
-        var ccNumPrefix = parseInt(ccNumValue.charAt(0));
-        if(ccNumPrefix != 4) {
-            console.log("billing_authorizePayment() - Credit Card number for VISA is invalid! Please retry!");
-            errorMsgArray.push("Credit Card number for VISA is invalid! Please retry!");
+
+    function billing_authorizePayment(event) {
+        event.preventDefault();
+
+        //Clear any previous error messages:
+        showOrHideBillingErrorMessage(null);
+        var errorMsgArray = [];
+
+        //Validate CC Type:
+        var ccTypeSelectedValue = null
+        var ccType = document.getElementById("ccNum")
+        var selectCCTypeDropDownMenu = document.getElementById("ccTypeSelect");
+        var ccTypeSelected = selectCCTypeDropDownMenu.options[selectCCTypeDropDownMenu.selectedIndex];
+        if (ccTypeSelected != null) {
+            ccTypeSelectedValue = ccTypeSelected.value;
+        }
+        if (ccTypeSelectedValue == null || ccTypeSelectedValue.trim() == "") {
+            console.log("billing_authorizePayment() - Please select Credit Card Type before continue!");
+            errorMsgArray.push("Please select Credit Card Type before continue!");
+            showOrHideBillingErrorMessage(errorMsgArray);
+            return;
+        }
+
+        //Validate CVC Code and CC Number:
+        var cvc = document.getElementById("cvc");
+        if (cvc.value == null || cvc.value.trim() == "") {
+            errorMsgArray.push("Please enter your Credit Card CVC code!");
+        }
+        var ccNum = document.getElementById("ccNum");
+        if (ccNum.value == null || ccNum.value.trim() == "") {
+            errorMsgArray.push("Please enter your Credit Card Number!");
+        } else if (/[^0-9-\s]+/.test(ccNum.value)) {
+            errorMsgArray.push("Your Credit Card Number must contain only numbers!");
+        }
+        //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+        
+        //========================================
+        //Validate expiration date
+        //========================================
+        var selectedExpMonth = document.getElementById("expireMonth");
+        var selectedExpYear = document.getElementById("expireMonth");
+        if (selectedExpMonth.value == "" || selectedExpYear.value == "") {
+            window.console.log("No Expiration Month and/or Year was selected");
+            errorMsgArray.push("Card Expiration Error: No Expiration Month and/or Year was selected. Please make your selection(s)");
+            showOrHideBillingErrorMessage(errorMsgArray);
+            return;
+        }
+        var selectedDate = new Date(document.getElementById("expireYear").value, document.getElementById("expireMonth").value)
+        window.console.log("Selected Date: " + selectedDate);
+        var nextmonth = selectedDate.setMonth(selectedDate.getMonth() + 1);
+        window.console.log("Next month: " + nextmonth);
+        var last_date_of_selected_date = new Date(nextmonth - 1);
+        var today = new Date();
+        window.console.log("Today :" + today);
+        if (today > selectedDate) {
+            window.console.log("Card has expired");
+            errorMsgArray.push("Date selected indicates card is expired. Please the date selected and correct or use another card if card has expired");
+            showOrHideBillingErrorMessage(errorMsgArray);
+            
+            return;
+        }
+        
+        else {
+            window.console.log("Congrats your card hasn't expired");
+            
+
+        }
+        
+        
+        
+        //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxx
+
+        if (errorMsgArray != null && errorMsgArray.length > 0) {
             showOrHideBillingErrorMessage(errorMsgArray);
             return;
         }
         
-    } else if(ccTypeSelectedValue == "mc") {
-        var ccNumPrefix = parseInt(ccNumValue.substring(0, 2));
-        if(ccNumPrefix != 51
-                && ccNumPrefix != 52
-                && ccNumPrefix != 53
-                && ccNumPrefix != 54
-                && ccNumPrefix != 55) {
-            console.log("billing_authorizePayment() - Credit Card number for Mastercard is invalid! Please retry!");
-            errorMsgArray.push("Credit Card number for Mastercard is invalid! Please retry!");
-            showOrHideBillingErrorMessage(errorMsgArray);
-            return;
-        }
-    } else {
-        //Amex:
-        var ccNumPrefix = parseInt(ccNumValue.substring(0, 2));
-        if(ccNumPrefix != 37) {
-            console.log("billing_authorizePayment() - Credit Card number for AMEX is invalid! Please retry!");
-            errorMsgArray.push("Credit Card number for AMEX is invalid! Please retry!");
-            showOrHideBillingErrorMessage(errorMsgArray);
-            return;
-        }
-    }
-    
-    //Validate against LUHN algorithm:
-    var nCheck = 0, nDigit = 0, bEven = false;
-    ccNumValue = ccNumValue.replace(/\D/g, "");
-    for (var n = ccNumValue.length - 1; n >= 0; n--) {
-        var cDigit = ccNumValue.charAt(n),
-            nDigit = parseInt(cDigit, 10);
-        if (bEven) {
-            if ((nDigit *= 2) > 9) nDigit -= 9;
-        }
-        nCheck += nDigit;
-        bEven = !bEven;
-    }
-    if(nCheck % 10 == 0) {
-        //SUCCESS:
-        console.log("billing_authorizePayment() - Credit Card type and number are VALID!");
-        return;
-    } else {
-        //FAIL:
-        console.log("billing_authorizePayment() - Credit Card Number is INVALID!");
-        errorMsgArray.push("Credit Card number you entered is invalid! Please retry!");
-        showOrHideBillingErrorMessage(errorMsgArray);
-        return;
-    }
-}
+        //========================================
 
-function showOrHideBillingErrorMessage(errorMsgArray) {
-    //event.preventDefault();
-    if(errorMsgArray != null && errorMsgArray.length > 0) {
-        var errorMsgHTML = null;
-        var i;
-        var arrayLength = errorMsgArray.length;
-        for (i = 0; i < arrayLength; i++) {
-            if(errorMsgHTML  == null) {
-                errorMsgHTML = errorMsgArray[i];
-            } else {
-                errorMsgHTML = errorMsgHTML + "<br/>" + errorMsgArray[i];
+
+        //Validate CC Type versus CC Number:
+        var ccNumValue = ccNum.value;
+        console.log("billing_authorizePayment() - ccNumValue: " + ccNumValue);
+        if (ccTypeSelectedValue == "visa") {
+            var ccNumPrefix = parseInt(ccNumValue.charAt(0));
+            if (ccNumPrefix != 4) {
+                console.log("billing_authorizePayment() - Credit Card number for VISA is invalid! Please retry!");
+                errorMsgArray.push("Credit Card number for VISA is invalid! Please retry!");
+                showOrHideBillingErrorMessage(errorMsgArray);
+                return;
+            }
+
+        } else if (ccTypeSelectedValue == "mc") {
+            var ccNumPrefix = parseInt(ccNumValue.substring(0, 2));
+            if (ccNumPrefix != 51 && ccNumPrefix != 52 && ccNumPrefix != 53 && ccNumPrefix != 54 && ccNumPrefix != 55) {
+                console.log("billing_authorizePayment() - Credit Card number for Mastercard is invalid! Please retry!");
+                errorMsgArray.push("Credit Card number for Mastercard is invalid! Please retry!");
+                showOrHideBillingErrorMessage(errorMsgArray);
+                return;
+            }
+        } else {
+            //Amex:
+            var ccNumPrefix = parseInt(ccNumValue.substring(0, 2));
+            if (ccNumPrefix != 37) {
+                console.log("billing_authorizePayment() - Credit Card number for AMEX is invalid! Please retry!");
+                errorMsgArray.push("Credit Card number for AMEX is invalid! Please retry!");
+                showOrHideBillingErrorMessage(errorMsgArray);
+                return;
             }
         }
-        var billErrorMsgSection = document.getElementById("billingErrorMsg");
-        billErrorMsgSection.innerHTML = errorMsgHTML;
-        billErrorMsgSection.style.display = "block";
-    } else {
-        var billErrorMsgSection = document.getElementById("billingErrorMsg");
-        billErrorMsgSection.innerHTML = "";
-        billErrorMsgSection.style.display = "none";
-    }
-}
-        
 
-    
+        //Validate against LUHN algorithm:
+        var nCheck = 0,
+            nDigit = 0,
+            bEven = false;
+        ccNumValue = ccNumValue.replace(/\D/g, "");
+        for (var n = ccNumValue.length - 1; n >= 0; n--) {
+            var cDigit = ccNumValue.charAt(n),
+                nDigit = parseInt(cDigit, 10);
+            if (bEven) {
+                if ((nDigit *= 2) > 9) nDigit -= 9;
+            }
+            nCheck += nDigit;
+            bEven = !bEven;
+        }
+        if (nCheck % 10 == 0) {
+            //SUCCESS:
+            console.log("billing_authorizePayment() - Credit Card type and number are VALID!");
+            return;
+        } else {
+            //FAIL:
+            console.log("billing_authorizePayment() - Credit Card Number is INVALID!");
+            errorMsgArray.push("Credit Card number you entered is invalid! Please retry!");
+            showOrHideBillingErrorMessage(errorMsgArray);
+            return;
+        }
+    }
+
+    function showOrHideBillingErrorMessage(errorMsgArray) {
+        //event.preventDefault();
+        if (errorMsgArray != null && errorMsgArray.length > 0) {
+            var errorMsgHTML = null;
+            var i;
+            var arrayLength = errorMsgArray.length;
+            for (i = 0; i < arrayLength; i++) {
+                if (errorMsgHTML == null) {
+                    errorMsgHTML = errorMsgArray[i];
+                } else {
+                    errorMsgHTML = errorMsgHTML + "<br/>" + errorMsgArray[i];
+                }
+            }
+            var billErrorMsgSection = document.getElementById("billingErrorMsg");
+            billErrorMsgSection.innerHTML = errorMsgHTML;
+            billErrorMsgSection.style.display = "block";
+        } else {
+            var billErrorMsgSection = document.getElementById("billingErrorMsg");
+            billErrorMsgSection.innerHTML = "";
+            billErrorMsgSection.style.display = "none";
+        }
+    }
+
+
+
     // &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 
     //^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    function validatePaymentInfo(event) {
-        event.preventDefault();
-        validateCCExpDate();
-    }
-    
-    function validateCCExpDate() { 
-    var selectedExpMonth = document.getElementById ("expireMonth"); 
-    var selectedExpYear = document.getElementById ("expireMonth");
-    if (selectedExpMonth.value == "" || selectedExpYear.value == "") {
-        window.console.log("No Expiration Month and/or Year was selected" ); 
-        return "Card Expiration Error: No Expiration Month and/or Year was selected. Please make your selection(s)";
-    }    
-    var selectedDate = new Date (document.getElementById("expireYear").value,document.getElementById("expireMonth").value)
-    window.console.log("Selected Date: " + selectedDate);
-    var nextmonth = selectedDate.setMonth(selectedDate.getMonth() + 1);
-    window.console.log("Next month: " + nextmonth); 
-    var last_date_of_selected_date = new Date(nextmonth -1);
-    var today = new Date();
-    window.console.log("Today :" + today); 
-    if (today > selectedDate) {
-        window.console.log("Card has expired"); 
-        return "Date selected indicates card is expired. Please the date selected and correct or use another card if card has expired"
-    }
-    else {
-        window.console.log("Congrats your card hasn't expired");
-        return null;
+//    function validatePaymentInfo(event) {
+//        event.preventDefault();
+//        validateCCExpDate();
+//    }
 
-    }
-}   
-    
-//****************************************************   
+//    function validateCCExpDate() {
+//        var selectedExpMonth = document.getElementById("expireMonth");
+//        var selectedExpYear = document.getElementById("expireMonth");
+//        if (selectedExpMonth.value == "" || selectedExpYear.value == "") {
+//            window.console.log("No Expiration Month and/or Year was selected");
+//            return "Card Expiration Error: No Expiration Month and/or Year was selected. Please make your selection(s)";
+//        }
+//        var selectedDate = new Date(document.getElementById("expireYear").value, document.getElementById("expireMonth").value)
+//        window.console.log("Selected Date: " + selectedDate);
+//        var nextmonth = selectedDate.setMonth(selectedDate.getMonth() + 1);
+//        window.console.log("Next month: " + nextmonth);
+//        var last_date_of_selected_date = new Date(nextmonth - 1);
+//        var today = new Date();
+//        window.console.log("Today :" + today);
+//        if (today > selectedDate) {
+//            window.console.log("Card has expired");
+//            return "Date selected indicates card is expired. Please the date selected and correct or use another card if card has expired"
+//        } else {
+//            window.console.log("Congrats your card hasn't expired");
+//            return null;
+//
+//        }
+//    }
+
+    //****************************************************   
 
 } // End init()
