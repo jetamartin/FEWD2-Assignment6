@@ -74,47 +74,47 @@
             <h1>Delivery Location: </h1>
             <br>
             <form role="form" id="deliveryInfo">
-               <fieldset id="deliveryFormFieldset">
-                <div class="form-group">
-                    <div id="nameField">
-                        <label for="name">Name:</label>
-                        <input type="name" class="form-control" id="nameInput">
-                    </div>
-                    <br>
-                    <label for="addressType">Address Type:</label>
-                    <select id="addressType">
-                        <option value="home">Home</option>
-                        <option value="apartment">Apartment</option>
-                        <option value="business">Business</option>
-                        <option value="campus">Campus</option>
-                        <option value="hotel">Hotel</option>
-                        <option value="dorm">Dorm</option>
-                        <option value="hotel">Hotel</option>
-                        <option disabled>──────────</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div id="hideOtherAddress">
-                        <label for="otherAddress">Other Address:</label>
-                        <input class="form-control" type="address" id="otherAddressInput">
-                    </div>
-                    <div>
-                        <label for="address">Street Address:</label>
-                        <input type="address" class="form-control" id="addressInput">
-                    </div>
+                <fieldset id="deliveryFormFieldset">
+                    <div class="form-group">
+                        <div id="nameField">
+                            <label for="name">Name:</label>
+                            <input type="name" class="form-control" id="nameInput">
+                        </div>
+                        <br>
+                        <label for="addressType">Address Type:</label>
+                        <select id="addressType">
+                            <option value="home">Home</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="business">Business</option>
+                            <option value="campus">Campus</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="dorm">Dorm</option>
+                            <option value="hotel">Hotel</option>
+                            <option disabled>──────────</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div id="hideOtherAddress">
+                            <label for="otherAddress">Other Address:</label>
+                            <input class="form-control" type="address" id="otherAddressInput">
+                        </div>
+                        <div>
+                            <label for="address">Street Address:</label>
+                            <input type="address" class="form-control" id="addressInput">
+                        </div>
 
-                    <label for="room">Apartment# / Suite# / Room#:</label>
-                    <input type="room" class="form-control" id="roomInput">
-                    <label for="city">City:</label>
-                    <input type="city" class="form-control" id="cityInput">
-                    <label for="state">State:</label>
-                    <input type="state" class="form-control" id="stateInput">
-                    <label for="zip">Zip Code:</label>
-                    <input type="zip" class="form-control" id="zipInput">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="emailInput">
-                </div>
-                <button id="submitPersonalInfo" type="submit" class="btn btn-default">Ready To Build Your Pizza</button>
-                <br>
+                        <label for="room">Apartment# / Suite# / Room#:</label>
+                        <input type="room" class="form-control" id="roomInput">
+                        <label for="city">City:</label>
+                        <input type="city" class="form-control" id="cityInput">
+                        <label for="state">State:</label>
+                        <input type="state" class="form-control" id="stateInput">
+                        <label for="zip">Zip Code:</label>
+                        <input type="zip" class="form-control" id="zipInput">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="emailInput">
+                    </div>
+                    <button id="submitPersonalInfo" type="submit" class="btn btn-default">Ready To Build Your Pizza</button>
+                    <br>
             </form>
         </div>
 
@@ -131,88 +131,88 @@
             <b>Total Order: $<span id="buildOrder_totalCost">0</span></b>
             <p/>
             <form id="buildOrder_form">
-              <fieldset id="orderFormFieldset">
-               
-                <!-- SELECT DOUGH -->
-                <div id="buildOrder_selectDough">
-                    Select Dough
-                    <br/>
-                    <input type="radio" name="dough" value="handTossed">Hand Tossed
-                    <br/>
-                    <input type="radio" name="dough" value="thinCrust">Thin Crust
-                    <br/>
-                    <input type="radio" name="dough" value="newYorkStyle">New York Style
-                    <br/>
-                    <input type="radio" name="dough" value="glutenFree">Gluten Free
-                    <br/>
-                </div>
+                <fieldset id="orderFormFieldset">
 
-                <!-- SELECT SIZE AND COST -->
-                <div id="buildOrder_size" style="margin-top:20px; display:none; ">
-                    Select Size
-                    <br/>
-                    <select id="buildOrder_sizeMenu"></select>
-                </div>
-
-                <div id="buildOrder_cheeseAndSauce" style="margin-top:20px; display:none;">
-                    <!-- SELECT CHEESE -->
-                    <div id="buildOrder_cheese" style="margin-right:20px; display:inline-block;">
-                        Cheese Options
+                    <!-- SELECT DOUGH -->
+                    <div id="buildOrder_selectDough">
+                        Select Dough
                         <br/>
-                        <select id="buildOrder_cheeseMenu">
-                            <option value="0">Light: no charge</option>
-                            <option value="0" selected>Normal: no charge</option>
-                            <option value="2.99">Extra: +$2.99</option>
-                            <option value="3.99">Double: +$3.99</option>
-                        </select>
+                        <input type="radio" name="dough" value="handTossed">Hand Tossed
+                        <br/>
+                        <input type="radio" name="dough" value="thinCrust">Thin Crust
+                        <br/>
+                        <input type="radio" name="dough" value="newYorkStyle">New York Style
+                        <br/>
+                        <input type="radio" name="dough" value="glutenFree">Gluten Free
+                        <br/>
                     </div>
 
-                    <!-- SELECT SAUCE -->
-                    <div id="buildOrder_sauce" style="display:inline-block;">
-                        Sauce Options
+                    <!-- SELECT SIZE AND COST -->
+                    <div id="buildOrder_size" style="margin-top:20px; display:none; ">
+                        Select Size
                         <br/>
-                        <select id="buildOrder_sauceMenu">
-                            <option value="0" selected>Regular Tomato: no charge</option>
-                            <option value="0.99">Hearty Tomato: +$.99</option>
-                            <option value="1.99">BBQ Sauce: +$1.99</option>
-                        </select>
+                        <select id="buildOrder_sizeMenu"></select>
                     </div>
-                </div>
 
-                <!-- SELECT TOPPING -->
-                <div id="buildOrder_topping" style="margin-top:20px; display:none;">
-                    Topping Options
-                    <br/>
-                    <i>Each topping is $.99 extra</i>
-                    <br/>
-                    <input id="buildOrder_topping_pepperoni" type="checkbox" name="topping" value="0.99">Pepperoni
-                    <br>
-                    <input id="buildOrder_topping_sausage" type="checkbox" name="topping" value="0.99">Sausage
-                    <br/>
-                    <input id="buildOrder_topping_ham" type="checkbox" name="topping" value="0.99">Ham
-                    <br/>
-                    <input id="buildOrder_topping_bacon" type="checkbox" name="topping" value="0.99">Bacon
-                    <br/>
-                    <input id="buildOrder_topping_salami" type="checkbox" name="topping" value="0.99">Salami
-                    <br/>
-                    <input id="buildOrder_topping_peppers" type="checkbox" name="topping" value="0.99">Peppers
-                    <br/>
-                    <input id="buildOrder_topping_olives" type="checkbox" name="topping" value="0.99">Olives
-                    <br/>
-                    <input id="buildOrder_topping_jalapenos" type="checkbox" name="topping" value="0.99">Jalapenos
-                    <br/>
-                    <input id="buildOrder_topping_mushrooms" type="checkbox" name="topping" value="0.99">Mushrooms
-                    <br/>
-                    <input id="buildOrder_topping_pineapple" type="checkbox" name="topping" value="0.99">Pineapple
-                    <br/>
-                    <input id="buildOrder_topping_onion" type="checkbox" name="topping" value="0.99">Onion
-                    <br/>
-                </div>
-                <button id="buildOrder_submitButton" type="submit" class="btn btn-default">Finished Building Pizza </button>
+                    <div id="buildOrder_cheeseAndSauce" style="margin-top:20px; display:none;">
+                        <!-- SELECT CHEESE -->
+                        <div id="buildOrder_cheese" style="margin-right:20px; display:inline-block;">
+                            Cheese Options
+                            <br/>
+                            <select id="buildOrder_cheeseMenu">
+                                <option value="0">Light: no charge</option>
+                                <option value="0" selected>Normal: no charge</option>
+                                <option value="2.99">Extra: +$2.99</option>
+                                <option value="3.99">Double: +$3.99</option>
+                            </select>
+                        </div>
+
+                        <!-- SELECT SAUCE -->
+                        <div id="buildOrder_sauce" style="display:inline-block;">
+                            Sauce Options
+                            <br/>
+                            <select id="buildOrder_sauceMenu">
+                                <option value="0" selected>Regular Tomato: no charge</option>
+                                <option value="0.99">Hearty Tomato: +$.99</option>
+                                <option value="1.99">BBQ Sauce: +$1.99</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- SELECT TOPPING -->
+                    <div id="buildOrder_topping" style="margin-top:20px; display:none;">
+                        Topping Options
+                        <br/>
+                        <i>Each topping is $.99 extra</i>
+                        <br/>
+                        <input id="buildOrder_topping_pepperoni" type="checkbox" name="topping" value="0.99">Pepperoni
+                        <br>
+                        <input id="buildOrder_topping_sausage" type="checkbox" name="topping" value="0.99">Sausage
+                        <br/>
+                        <input id="buildOrder_topping_ham" type="checkbox" name="topping" value="0.99">Ham
+                        <br/>
+                        <input id="buildOrder_topping_bacon" type="checkbox" name="topping" value="0.99">Bacon
+                        <br/>
+                        <input id="buildOrder_topping_salami" type="checkbox" name="topping" value="0.99">Salami
+                        <br/>
+                        <input id="buildOrder_topping_peppers" type="checkbox" name="topping" value="0.99">Peppers
+                        <br/>
+                        <input id="buildOrder_topping_olives" type="checkbox" name="topping" value="0.99">Olives
+                        <br/>
+                        <input id="buildOrder_topping_jalapenos" type="checkbox" name="topping" value="0.99">Jalapenos
+                        <br/>
+                        <input id="buildOrder_topping_mushrooms" type="checkbox" name="topping" value="0.99">Mushrooms
+                        <br/>
+                        <input id="buildOrder_topping_pineapple" type="checkbox" name="topping" value="0.99">Pineapple
+                        <br/>
+                        <input id="buildOrder_topping_onion" type="checkbox" name="topping" value="0.99">Onion
+                        <br/>
+                    </div>
+                    <button id="buildOrder_submitButton" type="submit" class="btn btn-default">Finished Building Pizza </button>
             </form>
 
             <!-- SUBMIT BUTTON -->
-<!--
+            <!--
             <div id="buildOrder_complete" style="margin-top:20px; display:none;">
                 <button id="buildOrder_submitButton" type="submit" class="btn btn-default">Finished Building Pizza</button>
             </div>
@@ -229,130 +229,140 @@
 
         </div>
         <div class="infoBox">
-           <div class="displayNone" id="billingErrorMsgs"> </div>
+            <div class="displayNone" id="billingErrorMsgs"> </div>
             <form role="form" id="userBillingInfo">
-                 <fieldset id="billingFormFieldset">
+                <fieldset id="billingFormFieldset">
 
-               <h1>Billing Information: </h1>
-                <br>
-                <div class="checkbox">
-                    <label>
-                        <input id="billingMatchDelivery" type="checkbox" value=""><span class="displayImportant">Billing Address Same As Delivery Address (if checked it autopopulates this form)</span>
-                    </label>
-                </div>
-                <div class="form-group">
-                    <div id="billNameField">
-                        <label for="name">Name:</label>
-                        <input type="name" class="form-control" id="billNameInput">
-                    </div>
+                    <h1>Billing Information: </h1>
                     <br>
-                    <label for="addressType">Address Type:</label>
-                    <select id="billAddressType">
-                        <option value="home">Home</option>
-                        <option value="apartment">Apartment</option>
-                        <option value="business">Business</option>
-                        <option value="campus">Campus</option>
-                        <option value="hotel">Hotel</option>
-                        <option value="dorm">Dorm</option>
-                        <option value="hotel">Hotel</option>
-                        <option disabled>──────────</option>
-                        <option value="other">Other</option>
-                    </select>
-                    <div id="billHideOtherAddress">
-                        <label for="otherAddress">Other Address:</label>
-                        <input class="form-control" type="address" id="billOtherAddressInput">
+                    <div class="checkbox">
+                        <label>
+                            <input id="billingMatchDelivery" type="checkbox" value=""><span class="displayImportant">Billing Address Same As Delivery Address (if checked it autopopulates this form)</span>
+                        </label>
                     </div>
-                    <div>
-                        <label for="address">Street Address:</label>
-                        <input type="address" class="form-control" id="billAddressInput">
-                    </div>
+                    <div class="form-group">
+                        <div id="billNameField">
+                            <label for="name">Name:</label>
+                            <input type="name" class="form-control" id="billNameInput">
+                        </div>
+                        <br>
+                        <label for="addressType">Address Type:</label>
+                        <select id="billAddressType">
+                            <option value="home">Home</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="business">Business</option>
+                            <option value="campus">Campus</option>
+                            <option value="hotel">Hotel</option>
+                            <option value="dorm">Dorm</option>
+                            <option value="hotel">Hotel</option>
+                            <option disabled>──────────</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div id="billHideOtherAddress">
+                            <label for="otherAddress">Other Address:</label>
+                            <input class="form-control" type="address" id="billOtherAddressInput">
+                        </div>
+                        <div>
+                            <label for="address">Street Address:</label>
+                            <input type="address" class="form-control" id="billAddressInput">
+                        </div>
 
-                    <label for="room">Apartment# / Suite# / Room#:</label>
-                    <input type="room" class="form-control" id="billRoomInput">
-                    <label for="city">City:</label>
-                    <input type="city" class="form-control" id="billCityInput">
-                    <label for="state">State:</label>
-                    <input type="state" class="form-control" id="billStateInput">
-                    <label for="zip">Zip Code:</label>
-                    <input type="zip" class="form-control" id="billZipInput">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="billEmailInput">
-                </div>
-                <button id="billSubmitPersonalInfo" type="submit" class="btn btn-default">Enter Payment Information</button>
-                <br>
+                        <label for="room">Apartment# / Suite# / Room#:</label>
+                        <input type="room" class="form-control" id="billRoomInput">
+                        <label for="city">City:</label>
+                        <input type="city" class="form-control" id="billCityInput">
+                        <label for="state">State:</label>
+                        <input type="state" class="form-control" id="billStateInput">
+                        <label for="zip">Zip Code:</label>
+                        <input type="zip" class="form-control" id="billZipInput">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="billEmailInput">
+                    </div>
+                    <button id="billSubmitPersonalInfo" type="submit" class="btn btn-default">Submit Billing Information</button>
+                    <br>
             </form>
         </div>
         <div id="billingSummary"></div>
-        <!-- ************************************-->
-        <!--              Credit Card Info       -->
-        <!-- ************************************-->
-        <div class="infoBox">
-              <form role="form" id="userPaymentForm">
-                <div class="form-group">
-                   <h2>Payment Information:</h2>
-                    <br>
-                    <div id="ccType">
-                        <select name="ccType">
-                            <option value="visa">Visa</option>
-                            <option value="mc">MasterCard</option>
-                            <option value="amex">American Express Card</option>
-                        </select>
-                    </div>
-                    <br>
-                    <div>
-                        <label for="cvc">CVC#:</label>
-                        <input type="name" class="form-control" id="cvc">
-                    </div>
-                    <br>
+     <div id="billingErrorMsg"
+          style="display:none;">
+     </div>     
+          
+  <form role="form" id="userPaymentForm">
+   <div class="form-group">
+      <h2>Payment Information:</h2>
+    <br>
+    <!-- SELECT CREDIT CARD -->
+    <div id="ccType">
+     <label for="ccType">Credit Card Type:&nbsp;</label>
+     <select id="ccTypeSelect" name="ccType">
+      <option disabled selected></option>
+      <option value="visa">Visa</option>
+      <option value="mc">MasterCard</option>
+      <option value="amex">American Express Card</option>
+     </select>
+    </div>
+    <br>
 
-                    <div>
+    <!-- SELECT CVC CODE -->
+    <div>
+     <label for="cvc">CVC#:&nbsp;</label>
+     <input type="name" class="form-control" id="cvc">
+    </div>
+    <br>
 
-                        <label for="cardExp">Card Expiration Date:&nbsp;  </label>
-                        <select name="expireMonth" id="expireMonth">
-                            <option value="">Month</option>
-                            <option value="0">Janaury</option>
-                            <option value="1">February</option>
-                            <option value="2">March</option>
-                            <option value="3">April</option>
-                            <option value="4">May</option>
-                            <option value="5">June</option>
-                            <option value="6">July</option>
-                            <option value="7">August</option>
-                            <option value="8">September</option>
-                            <option value="9">October</option>
-                            <option value="10">November</option>
-                            <option value="11">December</option>
-                        </select>
-                        <select name='expireYear' id="expireYear">
-                            <option value="">Year</option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                        </select>
-                        <!--Not sure on this field -->
-                        <input class="inputCard" type="hidden" name="expiry" id="expiry" size="4" />
-                    </div>
-                    <br>
-                    <div>
-                        <label for="ccNum">Credit Card Number:</label>
-                        <input type="ccNum" class="form-control" id="ccNum">
-                    </div>
-                    <br>
-                    <div>
-                        <button id="authorizePayment" type="submit" class="btn btn-default">Make Payment</button>
-                    </div>
-                </div>
-        </div>
+    <!-- SELECT EXPIRATION DATE -->
+    <div>
+     <label for="cardExp">Card Expiration Date:&nbsp;</label>
+     <select name="expireMonth" id="expireMonth">
+      <option value="">Month</option>
+      <option value="0">Janaury</option>
+      <option value="1">February</option>
+      <option value="2">March</option>
+      <option value="3">April</option>
+      <option value="4">May</option>
+      <option value="5">June</option>
+      <option value="6">July</option>
+      <option value="7">August</option>
+      <option value="8">September</option>
+      <option value="9">October</option>
+      <option value="10">November</option>
+      <option value="11">December</option>
+     </select>
+     <select name='expireYear' id="expireYear">
+      <option value="">Year</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+     </select>
+     
+     <!--Not sure on this field -->
+     <input class="inputCard" type="hidden" name="expiry" id="expiry" size="4" />
+    </div>
+    <br>
 
-        <footer data-brackets-id='300' class="footer">
-            <p data-brackets-id='301'>&copy; Company 2014</p>
-        </footer>
+    <!-- CREDIT CARD NUMBER -->
+    <div>
+     <label for="ccNum">Credit Card Number:&nbsp;</label>
+     <input type="ccNum" class="form-control" id="ccNum">
+    </div>
+    <br>
+    <div>
+     <button id="authorizePayment" type="submit" class="btn btn-default">Make Payment</button>
+    </div>
+   </div>
+  </form>    
+          
+  
+
+    <footer data-brackets-id='300' class="footer">
+        <p data-brackets-id='301'>&copy; Company 2014</p>
+    </footer>
 
 
     </div>
